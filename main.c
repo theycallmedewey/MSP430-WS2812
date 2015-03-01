@@ -4,9 +4,6 @@
 
 #define nLEDs 30
 
-#define ONE 110
-#define ZERO 100
-
 #define RED 255,0,0
 #define GREEN 0,255,0
 #define BLUE 0,0,255
@@ -26,11 +23,8 @@ led_t buffer[nLEDs];
 uint8_t encodeByte(uint8_t val);
 void packLED(uint8_t r, uint8_t g, uint8_t b, led_t * out);
 
-/*
- * main.c
- */
 int main(void) {
-    WDTCTL = WDTPW | WDTHOLD;	// Stop watchdog timer
+    WDTCTL = WDTPW | WDTHOLD;
 
     BCSCTL1 = CALBC1_16MHZ;
 
@@ -38,11 +32,11 @@ int main(void) {
     P1SEL = BIT5 + BIT6 + BIT7;
     P1SEL2 = BIT5 + BIT6 + BIT7;
     UCB0CTL1 = UCSWRST;
-    UCB0CTL1 |= UCSSEL_2;							// SMCLK
-    UCB0CTL0 = UCCKPH + UCMSB + UCMST + UCSYNC;		// 3-pin, 8-bit SPI master
+    UCB0CTL1 |= UCSSEL_2;
+    UCB0CTL0 = UCCKPH + UCMSB + UCMST + UCSYNC;
     UCB0BR0 = 6;
     UCB0BR1 = 0;
-    UCB0CTL1 &= ~UCSWRST;							// **Initialize USCI state machine**
+    UCB0CTL1 &= ~UCSWRST;
 
     int i, k;
     int j = 0;
