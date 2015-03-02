@@ -9,6 +9,6 @@ Most notably:
   * Uses RoXXoR's 3bit encoding to reduce number of SPI transfers (compared to 4 bit and 8 bit encodings)
 
 Issues:
-  * Bit 2 to the LEDs is always set, so the LEDs are never fully dark. This is because in the 3bit encoding, bit 2 is on the edge between two SPI bytes and the time it takes to refresh the shift register causes the high side to be stretched a bit further than it should.
+  * Bit 2 to the LEDs is always set, so the LEDs are never fully dark. This is because in the 3bit encoding, bit 2 is on the edge between two SPI bytes and the time it takes to refresh the shift register causes the high side to be stretched a bit further than it should be.
 
 Expect frequent cleanups and changes as this project is ongoing.
