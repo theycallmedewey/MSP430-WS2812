@@ -11,8 +11,7 @@ Most notably:
   * Added ability to control global brightness of the pixels on-the-fly
 
 Future improvements:
-  * Add more pattern options
+  * Add framework for patterns stored in program space
   * Allow upconversion from 565 encoding
-  * Better separate LED code from rotary encoder code
 
 Expect frequent cleanups and changes as this project is ongoing.
